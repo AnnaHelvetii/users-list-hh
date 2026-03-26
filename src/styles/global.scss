@@ -1,0 +1,28 @@
+@use "./reset";
+@use "./variables" as *;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+body {
+	font-family: "Manrope", sans-serif;
+	background: $color-05;
+	color: $color-01;
+}
+
+.container {
+	width: 100%;
+	max-width: $container-desktop;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+button {
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+input {
+	border: 1px solid $color-04;
+	border-radius: 50px;
+	padding: 10px 16px;
+}
