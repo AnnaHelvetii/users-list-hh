@@ -5,6 +5,7 @@ import type { User } from "../../types/user";
 import styles from "./UserCard.module.scss";
 import avatarImg from "../../img/avatar.png";
 import showMoreImg from "../../img/icons/More-desktop.svg";
+import showMoreImgMobile from "../../img/icons/More-mobile.svg";
 
 interface Props {
 	user: User;
@@ -29,21 +30,28 @@ export const UserCard = ({
 
 	return (
 		<div ref={cardRef} className={styles.userCard}>
-			<img src={avatarImg} alt="avatar" className={styles.userImg} />
+			<img 
+				src={avatarImg} 
+				alt="avatar" 
+				className={`${styles.userImg} ${isArchived ? styles.archivedImg : ''}`}
+			/>
 			<div className={styles.userInfo}>
 				<div className={styles.userInfoTop}>
 					<div className={styles.userNameButton}>
-						<h3>{user.username}</h3>
+						<h3 className={isArchived ? styles.archivedUserName : undefined}>{user.username}</h3>
 						<button
 							className={styles.moreButton}
 							onClick={() => setMenuOpen(prev => !prev)}
 						>
-							<img src={showMoreImg} alt="more" />
+							<picture>
+								<source srcSet={showMoreImgMobile} media="(max-width: 768px)" />
+								<img src={showMoreImg} alt="more" />
+							</picture>
 						</button>
 					</div>
-					<p>{user.company.name}</p>
+					<p className={isArchived ? styles.archivedCompany : undefined}>{user.company.name}</p>
 				</div>
-				<span>{user.address.city}</span>
+				<span className={isArchived ? styles.archivedAddress : undefined}>{user.address.city}</span>
 			</div>
 
 			{menuOpen && (

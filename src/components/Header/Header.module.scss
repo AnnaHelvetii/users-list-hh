@@ -1,1 +1,63 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *; 
 
+.headerContainer {
+	width: 100%;
+	padding: 16px 40px;
+	background-color: $color-06;
+
+	.headerContent {
+		max-width: 1140px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.headerMenu {
+			display: flex;
+			gap: 20px;
+			align-items: center;
+
+			.userActions {
+				display: flex;
+				gap: 4px;
+
+				img {
+					@include xs {
+						display: none;
+					}
+				}
+			}
+
+			.userInfo {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+
+				img {
+					border-radius: 50%;
+					width: 20px;
+					height: 20px;
+
+					@include xs {
+						width: 28px;
+						height: 28px;
+					}
+				}
+
+				span {
+					font-weight: 500;
+					color: $color-02;
+
+					@include xs {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	@include sm {
+		padding: 16px 16px;
+	}
+}

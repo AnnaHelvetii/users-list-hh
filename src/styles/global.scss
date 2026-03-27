@@ -1,5 +1,6 @@
 @use "./reset";
 @use "./variables" as *;
+@use "./mixins" as *;
 
 @font-face {
 	font-family: 'Manrope';
@@ -21,7 +22,19 @@ body {
 	width: 100%;
 	max-width: $container-desktop;
 	margin: 0 auto;
-	padding: 40px 0px;
+	padding: 40px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+
+	@include lg {
+		padding: 40px;
+	}
+
+	@include sm {
+		padding: 32px 16px 40px;
+		gap: 32px;
+	}
 }
 
 button {
