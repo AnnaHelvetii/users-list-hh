@@ -29,7 +29,7 @@ export const UsersPage = () => {
 	);
 
 	return (
-		<div className="container">
+		<div className={`container ${styles.pageWrapper}`}>
 			<section className={styles.section}>
 				<h2 className={styles.title}>Активные</h2>
 				<div className={styles.usersList}>

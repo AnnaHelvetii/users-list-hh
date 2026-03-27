@@ -1,37 +1,42 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
-.title {
-	font-size: 24px;
-	font-weight: 600;
-	color: $color-01;
-	margin-bottom: 16px;
-}
-
-.usersList {
-	padding-top: 28px;
-	display: grid;
-	grid-template-columns: repeat(3, 360px);
-	gap: 40px;
-	border-top: 1px solid $color-04;
-	max-width: calc(360px * 3 + 40px * 2);
-
-	@include lg {
-		grid-template-columns: repeat(3, 1fr);
-		gap: 24px;
+.pageWrapper {
+	display: flex;
+	flex-direction: column;
+	
+	.title {
+		font-size: 24px;
+		font-weight: 600;
+		color: $color-01;
+		margin-bottom: 16px;
 	}
-
-	@include md {
-		grid-template-columns: repeat(2, 1fr);
-	}
-
-	@include sm {
-		grid-template-columns: repeat(3, 1fr);
-		gap: 20px;
-		padding-top: 16px;
-	}
-
-	@include xs {
-		grid-template-columns: repeat(2, 1fr);
+	
+	.usersList {
+		padding-top: 28px;
+		display: grid;
+		grid-template-columns: repeat(3, 360px);
+		gap: 40px;
+		border-top: 1px solid $color-04;
+		max-width: calc(360px * 3 + 40px * 2);
+	
+		@include lg {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 24px;
+		}
+	
+		@include md {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	
+		@include sm {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 20px;
+			padding-top: 16px;
+		}
+	
+		@include xs {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 }

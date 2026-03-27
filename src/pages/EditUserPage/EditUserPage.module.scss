@@ -1,1 +1,60 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
 
+.pageWrapper {
+	display: flex;
+
+	.section {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		background-color: $color-06;
+		padding: 40px;
+		border-radius: 8px;
+
+		&.sectionLeft {
+			.profileChapters {
+				display: flex;
+				flex-direction: column;
+				gap: 24px;
+	
+				li {
+					font-weight: 500;
+					color: $color-03;
+					padding-bottom: 12px;
+					border-bottom: 1px solid $color-04;
+				}
+	
+				li:first-child {
+					font-weight: 600;
+					color: $color-01;
+				}
+			}
+		}
+
+		&.sectionRight {
+			width: 100%;
+
+			.mainTitle {
+				font-size: 24px;
+				font-weight: 600;
+			}
+
+			form {
+				max-width: 420px;
+
+				.formField {
+					display: flex;
+					flex-direction: column;
+					margin-bottom: 24px;
+
+					label {
+						font-size: 18px;
+						font-weight: 600;
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+	}
+}
