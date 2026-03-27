@@ -3,58 +3,189 @@
 
 .pageWrapper {
 	display: flex;
+	flex-direction: column;
+	gap: 24px;
 
-	.section {
+	@include lg {
+		padding: 0 40px;
+	}
+
+	.returnBlock {
 		display: flex;
-		flex-direction: column;
-		gap: 40px;
-		background-color: $color-06;
-		padding: 40px;
-		border-radius: 8px;
+		gap: 8px;
+		padding: 20.5px 0;
 
-		&.sectionLeft {
-			.profileChapters {
-				display: flex;
-				flex-direction: column;
-				gap: 24px;
-	
-				li {
-					font-weight: 500;
-					color: $color-03;
-					padding-bottom: 12px;
-					border-bottom: 1px solid $color-04;
-				}
-	
-				li:first-child {
-					font-weight: 600;
-					color: $color-01;
-				}
+		img {
+			width: 28px;
+		}
+
+		picture {
+			width: 24px;
+		}
+
+		span {
+			font-size: 20px;
+			font-weight: 600;
+			color: $color-02;
+
+			@include sm {
+				font-size: 16px;
 			}
 		}
 
-		&.sectionRight {
-			width: 100%;
+		@include sm {
+			padding: 13px 8px;
+		}
+	}
 
-			.mainTitle {
-				font-size: 24px;
-				font-weight: 600;
-			}
+	.sections {
+		display: flex;
+		gap: 40px;
 
-			form {
-				max-width: 420px;
+		.section {
+			display: flex;
+			flex-direction: column;
+			gap: 24px;
+			background-color: $color-06;
+			padding: 40px;
+			border-radius: 8px;
+	
+			&.sectionLeft {
+				min-width: 360px;
 
-				.formField {
+				.userAvatar {
+					@include sm {
+						max-height: 350px;
+						object-fit: cover;
+						border-radius: 8px;
+					}
+	
+					@include xs {
+						max-height: 187px;
+					}
+				}
+	
+				.profileChapters {
 					display: flex;
 					flex-direction: column;
-					margin-bottom: 24px;
-
-					label {
-						font-size: 18px;
+					gap: 24px;
+		
+					li {
+						font-weight: 500;
+						color: $color-03;
+						padding-bottom: 12px;
+						border-bottom: 1px solid $color-04;
+	
+						@include sm {
+							font-size: 14px;
+							padding-bottom: 8px;
+						}
+					}
+		
+					li:first-child {
 						font-weight: 600;
-						margin-bottom: 10px;
+						color: $color-01;
+					}
+	
+					@include sm {
+						gap: 20px;
 					}
 				}
 			}
+	
+			&.sectionRight {
+				width: 100%;
+	
+				.mainTitle {
+					font-size: 24px;
+					font-weight: 600;
+					border-bottom: 1px solid $color-04;
+					padding-bottom: 16px;
+				}
+	
+				form {
+					max-width: 420px;
+	
+					.formField {
+						display: flex;
+						flex-direction: column;
+						margin-bottom: 24px;
+	
+						input {
+							font-weight: 500;
+	
+							@include sm {
+								font-size: 14px;
+							}
+						}
+	
+						label {
+							font-size: 18px;
+							font-weight: 600;
+							margin-bottom: 10px;
+	
+							@include sm {
+								font-size: 16px;
+							}
+						}
+	
+						@include sm {
+							margin-bottom: 20px;
+						}
+					}
+	
+					.closeButton {
+						margin-top: 8px;
+						color: $color-06;
+						background-color: $color-01;
+						font-weight: 600;
+						padding: 12px 42px;
+						border-radius: 50px;
+	
+						@include sm {
+							margin-top: 4px;
+							width: 100%;
+						}
+					}
+	
+					@include sm {
+						max-width: 100%;
+					}
+				}
+			}
+	
+			@include sm {
+				padding: 28px;
+				gap: 24px;
+			}
 		}
+
+		@include sm {
+			flex-direction: column;
+			gap: 32px;
+		}
+	}
+	
+	.modalContent {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		
+		.modalImg {
+			width: 84px;
+		}
+		
+		.closeMessage {
+			font-weight: 600;
+			font-size: 20px;
+			color: $color-02;
+		}
+	}
+
+	@include sm {
+		flex-direction: column;
+		gap: 20px;
+		padding: 0 16px;
 	}
 }

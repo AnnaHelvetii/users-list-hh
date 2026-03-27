@@ -4,6 +4,17 @@
 .pageWrapper {
 	display: flex;
 	flex-direction: column;
+	padding: 40px 0;
+	gap: 40px;
+
+	@include lg {
+		padding: 40px;
+	}
+
+	@include sm {
+		padding: 32px 16px 40px;
+		gap: 32px;
+	}
 	
 	.title {
 		font-size: 24px;

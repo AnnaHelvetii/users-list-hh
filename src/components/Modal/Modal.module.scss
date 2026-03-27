@@ -1,0 +1,34 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.overlay {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	inset: 0;
+	background: #16161624;
+	z-index: 999;
+}
+
+.modal {
+	position: relative;
+	background: $color-06;
+	border-radius: 16px;
+	padding: 40px;
+}
+
+.close {
+	position: absolute;
+	top: 18px;
+	right: 18px;
+	padding: 0;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+}
+
+.close img {
+	width: 28px;
+	height: 28px;
+}

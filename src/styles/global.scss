@@ -22,28 +22,12 @@ body {
 	width: 100%;
 	max-width: $container-desktop;
 	margin: 0 auto;
-	padding: 40px 0;
-	gap: 40px;
-
-	@include lg {
-		padding: 40px;
-	}
-
-	@include sm {
-		padding: 32px 16px 40px;
-		gap: 32px;
-	}
 }
 
 button {
 	border: none;
 	background: none;
 	cursor: pointer;
-	background-color: $color-01;
-	color: $color-06;
-	font-weight: 600;
-	padding: 12px 42px;
-	border-radius: 50px;
 }
 
 input {
