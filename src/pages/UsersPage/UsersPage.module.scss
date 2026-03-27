@@ -1,0 +1,29 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.section {
+	margin-top: 40px;
+}
+
+.title {
+	font-size: 24px;
+	font-weight: 600;
+	color: $color-01;
+	margin-bottom: 16px;
+}
+
+.usersList {
+	padding-top: 28px;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(360px, 1fr));
+	gap: 40px;
+	border-top: 1px solid $color-04;
+
+	@include tablet {
+		grid-template-columns: repeat(2, minmax(360px, 1fr));
+	}
+
+	@include mobile {
+		grid-template-columns: 1fr;
+	}
+}

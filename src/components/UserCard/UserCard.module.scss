@@ -1,0 +1,81 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.userCard {
+	display: flex;
+	gap: 20px;
+	background: $color-06;
+	padding: 24px;
+	border-radius: 8px;
+	position: relative;
+
+	.userImg {
+		width: 112px;
+		height: 120px;
+	}
+
+	.userInfo {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+		
+		.userInfoTop {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+			
+			.userNameButton {
+				display: flex;
+				justify-content: space-between;
+			
+				h3 {
+					font-size: 20px;
+					font-weight: 600;
+					color: $color-accent;
+				}
+			}
+	
+			p {
+				color: $color-02;
+				font-weight: 500;
+			}
+		}
+	
+		span {
+			font-size: 14px;
+			color: $color-03;
+		}
+	}
+
+	.actionContainer {
+		width: 200px;
+		padding: 8px;
+		background-color: $color-06;
+		border-radius: 12px;
+		box-shadow: 0 0 2px #5A5A5A;
+		position: absolute;
+		top: 50px;
+		right: 0;
+
+		.actionButtons {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			
+			button {
+				padding: 8px 12px;
+				text-align: left;
+				font-weight: 500;
+
+				@include mobile {
+					font-size: 14px;
+				}
+			}
+		}
+
+		@include mobile {
+			width: 160px;
+		}
+	}
+}

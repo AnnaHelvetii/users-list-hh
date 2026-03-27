@@ -1,9 +1,18 @@
 @use "./reset";
 @use "./variables" as *;
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+@font-face {
+	font-family: 'Manrope';
+	src: url('/src/fonts/Manrope-VariableFont_wght.ttf') format('truetype');
+	font-weight: 200 800; 
+	font-style: normal;
+	font-display: swap;
+}
 
 body {
 	font-family: "Manrope", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
 	background: $color-05;
 	color: $color-01;
 }
@@ -12,7 +21,7 @@ body {
 	width: 100%;
 	max-width: $container-desktop;
 	margin: 0 auto;
-	padding: 0 20px;
+	padding: 40px 0px;
 }
 
 button {
