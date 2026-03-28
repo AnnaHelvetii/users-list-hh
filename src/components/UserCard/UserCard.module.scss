@@ -64,6 +64,34 @@
 						color: $color-02;
 					}
 				}
+
+				.moreButton {
+					width: 24px;
+					height: 24px;
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+					cursor: pointer;
+						background-image: url("../../img/icons/More-desktop.svg");
+
+					&:hover {
+						background-image: url("../../img/icons/More-desktop-hover.svg");
+					}
+
+					&:active {
+						background-image: url("../../img/icons/More-desktop-tap.svg");
+					}
+
+					@include sm {
+						width: 24px;
+						height: 24px;
+						background-image: url("../../img/icons/More-mobile.svg");
+
+						&:active {
+							background-image: url("../../img/icons/More-mobile-tap.svg");
+						}
+					}
+				}
 			}
 	
 			p {
@@ -125,6 +153,10 @@
 				padding: 8px 12px;
 				text-align: left;
 				font-weight: 500;
+
+				&:hover {
+					color: $color-accent;
+				}
 
 				@include xs {
 					font-size: 14px;

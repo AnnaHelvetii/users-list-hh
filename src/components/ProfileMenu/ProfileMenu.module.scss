@@ -1,0 +1,35 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.profileCategories {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+
+	li {
+		font-weight: 500;
+		color: $color-03;
+		padding-bottom: 12px;
+		border-bottom: 1px solid $color-04;
+		cursor: pointer;
+		transition: color 0.2s ease;
+
+	&:hover {
+		color: $color-accent;
+	}
+
+	&.active {
+		font-weight: 600;
+		color: $color-02;
+	}
+
+		@include sm {
+			font-size: 14px;
+			padding-bottom: 8px;
+		}
+	}
+
+	@include sm {
+		gap: 20px;
+	}
+}
