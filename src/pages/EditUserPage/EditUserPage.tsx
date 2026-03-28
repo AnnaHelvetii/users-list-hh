@@ -13,6 +13,7 @@ import avatarBig from './../../img/avatarBig.png';
 import checkBox from './../../img/Checked-box.svg';
 import arrow from './../../img/icons/Backarrow.svg';
 import arrowMobile from './../../img/icons/Backarrow-mobile.svg';
+import crossIcon from './../../img/icons/Cross.svg';
 
 export const EditUserPage = () => {
 	const { id } = useParams();
@@ -29,6 +30,7 @@ export const EditUserPage = () => {
 		register,
 		handleSubmit,
 		reset,
+		resetField,
 		formState: { errors }
 	} = useForm<UserFormValues>({
 		resolver: zodResolver(userSchema)
@@ -55,9 +57,7 @@ export const EditUserPage = () => {
 
 	const onSubmit = (data: UserFormValues) => {
 		console.log("Saved data", data)
-
 		setModalOpen(true)
-
 		setTimeout(() => {
 			setModalOpen(false)
 		}, 4000)
@@ -92,46 +92,115 @@ export const EditUserPage = () => {
 				</div>
 
 				<div className={`${styles.section} ${styles.sectionRight}`}>
-					<p className={styles.mainTitle}>Данные профиля</p>
+					<p className={styles.mainTitle}>Данные профиля полей</p>
 					<form onSubmit={handleSubmit(onSubmit)}>
 						<div className={styles.formField}>
 							<label>Имя</label>
-							<input placeholder="Name" {...register("name")} />
+							<div className={styles.inputWrapper}>
+								<input placeholder="Name" {...register("name")} />
+								<button
+									type="button"
+									className={styles.clearBtn}
+									onMouseDown={(e) => {
+										e.preventDefault();
+										resetField("name");
+									}}
+								>
+									<img src={crossIcon} alt="clear" />
+								</button>
+							</div>
 							<p>{errors.name?.message}</p>
 						</div>
 						<div className={styles.formField}>
 							<label>Никнейм</label>
-							<input placeholder="Username" {...register("username")} />
+							<div className={styles.inputWrapper}>
+								<input placeholder="Username" {...register("username")} />
+								<button
+									type="button"
+									className={styles.clearBtn}
+									onMouseDown={(e) => {
+										e.preventDefault();
+										resetField("username");
+									}}
+								>
+									<img src={crossIcon} alt="clear" />
+								</button>
+							</div>
 							<p>{errors.username?.message}</p>
 						</div>
 						<div className={styles.formField}>
 							<label>Почта</label>
-							<input placeholder="Email" {...register("email")} />
+							<div className={styles.inputWrapper}>
+								<input placeholder="Email" {...register("email")} />
+								<button
+									type="button"
+									className={styles.clearBtn}
+									onMouseDown={(e) => {
+										e.preventDefault();
+										resetField("email");
+									}}
+								>
+									<img src={crossIcon} alt="clear" />
+								</button>
+							</div>
 							<p>{errors.email?.message}</p>
 						</div>
 						<div className={styles.formField}>
 							<label>Город</label>
-							<input placeholder="City" {...register("city")} />
+							<div className={styles.inputWrapper}>
+								<input placeholder="City" {...register("city")} />
+								<button
+									type="button"
+									className={styles.clearBtn}
+									onMouseDown={(e) => {
+										e.preventDefault();
+										resetField("city");
+									}}
+								>
+									<img src={crossIcon} alt="clear" />
+								</button>
+							</div>
 							<p>{errors.city?.message}</p>
 						</div>
 						<div className={styles.formField}>
 							<label>Телефон</label>
-							<input
-								placeholder="Phone"
-								{...register("phone")}
-								onInput={(e) => {
-									e.currentTarget.value =
-										e.currentTarget.value.replace(/\D/g, "")
-								}}
-							/>
+							<div className={styles.inputWrapper}>
+								<input
+									placeholder="Phone"
+									{...register("phone")}
+									onInput={(e) => {
+										e.currentTarget.value =
+											e.currentTarget.value.replace(/\D/g, "")
+									}}
+								/>
+								<button
+									type="button"
+									className={styles.clearBtn}
+									onMouseDown={(e) => {
+										e.preventDefault();
+										resetField("phone");
+									}}
+								>
+									<img src={crossIcon} alt="clear" />
+								</button>
+							</div>
 							<p>{errors.phone?.message}</p>
 						</div>
 						<div className={styles.formField}>
 							<label>Название компании</label>
-							<input
-								placeholder="Company"
-								{...register("company")}
-							/>
+							<div className={styles.inputWrapper}>
+								<input placeholder="Company" {...register("company")} />
+								<button
+									type="button"
+									className={styles.clearBtn}
+									onMouseDown={(e) => {
+										e.preventDefault();
+										resetField("company");
+									}}
+								>
+									<img src={crossIcon} alt="clear" />
+								</button>
+							</div>
 							<p>{errors.company?.message}</p>
 						</div>
 						<button className={styles.closeButton} type="submit">Сохранить</button>
