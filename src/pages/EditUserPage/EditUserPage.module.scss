@@ -132,6 +132,11 @@
 						@include sm {
 							margin-bottom: 20px;
 						}
+
+						p {
+							margin-top: 4px;
+							color: $color-02;
+						}
 					}
 	
 					.closeButton {
