@@ -1,0 +1,45 @@
+@use "../../styles/variables" as *;
+
+.errorContainer {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+
+    .errorIcon {
+        width: 60px;
+        height: 60px;
+        background: $color-05;
+        color: $color-accent;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        font-weight: 600;
+    }
+
+    h3 {
+        font-size: 24px;
+        color: $color-01;
+    }
+
+    p {
+        color: $color-02;
+        max-width: 300px;
+    }
+
+    .retryBtn {
+        margin-top: 10px;
+        font-weight: 600;
+    	padding: 12px 42px;
+    	border-radius: 50px;
+        background: $color-01;
+        color: $color-06;
+        font-weight: 600;
+    }
+}

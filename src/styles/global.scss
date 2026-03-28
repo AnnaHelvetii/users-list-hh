@@ -18,6 +18,14 @@ body {
 	color: $color-01;
 }
 
+main {
+	padding-bottom: 200px;
+
+	@include sm {
+		padding-bottom: 32px;
+	}
+}
+
 .container {
 	width: 100%;
 	max-width: $container-desktop;

@@ -4,9 +4,10 @@ import { fetchUser } from "../../api/usersApi";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { userSchema } from "../../schemas/userSchema";
-import type { UserFormValues } from "../../schemas/userSchema";
 import { useEffect, useState } from "react";
 import { Modal } from "../../components/Modal/Modal";
+import { Loader } from "../../components/Loader/Loader";
+import type { UserFormValues } from "../../schemas/userSchema";
 import styles from './EditUserPage.module.scss';
 import avatarBig from './../../img/avatarBig.png';
 import checkBox from './../../img/Checked-box.svg';
@@ -46,7 +47,11 @@ export const EditUserPage = () => {
 		}
 	}, [user, reset])
 
-	if (isLoading) return <p>Загрузка профиля...</p>
+	if (isLoading) {
+		return (
+			<Loader />
+		)
+	}
 
 	const onSubmit = (data: UserFormValues) => {
 		console.log("Saved data", data)

@@ -2,20 +2,33 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchUsers } from "../../api/usersApi";
 import { useUsersStore } from "../../store/usersStore";
 import { UserCard } from "../../components/UserCard/UserCard";
+import { Loader } from "../../components/Loader/Loader";
+import { ErrorMessage } from "../../components/ErrorMessage/ErrorMessage";
 import styles from "./UsersPage.module.scss";
 
 export const UsersPage = () => {
 	const { archived, hidden, archiveUser, restoreUser, hideUser } =
 		useUsersStore();
 
-	const { data: users, isLoading, error } = useQuery({
+	const { data: users, isLoading, error, refetch } = useQuery({
 		queryKey: ["users"],
 		queryFn: fetchUsers
 	});
 
-	if (isLoading) return <p>Загрузка...</p>;
+	if (isLoading) {
+		return (
+			<Loader />
+		)
+	}
 
-	if (error) return <p>Ошибка загрузки</p>;
+	if (error) {
+		return (
+			<ErrorMessage
+				message="Не удалось загрузить список пользователей"
+				onRetry={() => refetch()}
+			/>
+		);
+	}
 
 	const visibleUsers =
 		users?.filter((user) => !hidden.includes(user.id)) || [];
