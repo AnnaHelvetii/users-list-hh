@@ -54,6 +54,8 @@
 				min-width: 360px;
 
 				.userAvatar {
+					border-radius: 8px;
+					
 					@include sm {
 						max-height: 350px;
 						object-fit: cover;
@@ -90,6 +92,10 @@
 					@include sm {
 						gap: 20px;
 					}
+				}
+
+				@include sm {
+					min-width: auto;
 				}
 			}
 	
@@ -185,6 +191,11 @@
 						@include sm {
 							margin-top: 4px;
 							width: 100%;
+						}
+
+						&:hover {
+							color: $color-02;
+							background-color: $color-05;
 						}
 					}
 	

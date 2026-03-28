@@ -12,6 +12,8 @@
 	.userImg {
 		width: 112px;
 		height: 120px;
+		object-fit: cover;
+		border-radius: 8px;
 
 		@include xs {
 			width: 130px;
