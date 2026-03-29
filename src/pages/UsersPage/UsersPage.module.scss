@@ -2,8 +2,7 @@
 @use "../../styles/mixins" as *;
 
 .pageWrapper {
-	display: flex;
-	flex-direction: column;
+	@include flex-column;
 	padding: 40px 0;
 	gap: 40px;
 

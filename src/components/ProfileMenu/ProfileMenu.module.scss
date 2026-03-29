@@ -2,8 +2,7 @@
 @use "../../styles/mixins" as *;
 
 .profileCategories {
-	display: flex;
-	flex-direction: column;
+	@include flex-column;
 	gap: 24px;
 
 	li {

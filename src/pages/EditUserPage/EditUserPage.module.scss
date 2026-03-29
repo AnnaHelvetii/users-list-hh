@@ -2,8 +2,7 @@
 @use "../../styles/mixins" as *;
 
 .pageWrapper {
-	display: flex;
-	flex-direction: column;
+	@include flex-column;
 	gap: 24px;
 
 	@include lg {
@@ -43,54 +42,26 @@
 		gap: 40px;
 
 		.section {
-			display: flex;
-			flex-direction: column;
+			@include flex-column;
 			gap: 24px;
 			background-color: $color-06;
 			padding: 40px;
-			border-radius: 8px;
+			@include border-radius-8;
 	
 			&.sectionLeft {
 				min-width: 360px;
 
 				.userAvatar {
-					border-radius: 8px;
-					
+					@include border-radius-8;
+
 					@include sm {
 						max-height: 350px;
 						object-fit: cover;
-						border-radius: 8px;
+						@include border-radius-8;
 					}
 	
 					@include xs {
 						max-height: 187px;
-					}
-				}
-	
-				.profileChapters {
-					display: flex;
-					flex-direction: column;
-					gap: 24px;
-		
-					li {
-						font-weight: 500;
-						color: $color-03;
-						padding-bottom: 12px;
-						border-bottom: 1px solid $color-04;
-	
-						@include sm {
-							font-size: 14px;
-							padding-bottom: 8px;
-						}
-					}
-		
-					li:first-child {
-						font-weight: 600;
-						color: $color-01;
-					}
-	
-					@include sm {
-						gap: 20px;
 					}
 				}
 
@@ -113,8 +84,7 @@
 					max-width: 420px;
 	
 					.formField {
-						display: flex;
-						flex-direction: column;
+						@include flex-column;
 						margin-bottom: 24px;
 
 						.inputWrapper {
@@ -218,8 +188,7 @@
 	}
 	
 	.modalContent {
-		display: flex;
-		flex-direction: column;
+		@include flex-column;
 		align-items: center;
 		gap: 20px;
 		

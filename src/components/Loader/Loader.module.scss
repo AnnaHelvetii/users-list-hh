@@ -1,14 +1,13 @@
 @use "../../styles/variables" as *;
+@use '../../styles/mixins' as *;
 
 .loadContainer {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 16px;
     background-color: $color-06;
+	@include flex-center;
+	@include flex-column;
 
     .spinner {
         width: 50px;

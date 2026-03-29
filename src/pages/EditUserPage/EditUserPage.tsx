@@ -14,6 +14,7 @@ import checkBox from './../../img/Checked-box.svg';
 import arrow from './../../img/icons/Backarrow.svg';
 import arrowMobile from './../../img/icons/Backarrow-mobile.svg';
 import crossIcon from './../../img/icons/Cross.svg';
+import { ProfileMenu } from "../../components/ProfileMenu/ProfileMenu";
 
 export const EditUserPage = () => {
 	const { id } = useParams();
@@ -83,16 +84,11 @@ export const EditUserPage = () => {
 						src={avatarBig}
 						className={styles.userAvatar}
 					/>
-					<ul className={styles.profileChapters}>
-						<li>Данные профиля</li>
-						<li>Рабочее пространство</li>
-						<li>Приватность</li>
-						<li>Безопасность</li>
-					</ul>
+					<ProfileMenu />
 				</div>
 
 				<div className={`${styles.section} ${styles.sectionRight}`}>
-					<p className={styles.mainTitle}>Данные профиля полей</p>
+					<p className={styles.mainTitle}>Данные профиля</p>
 					<form onSubmit={handleSubmit(onSubmit)}>
 						<div className={styles.formField}>
 							<label>Имя</label>

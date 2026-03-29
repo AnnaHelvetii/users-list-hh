@@ -1,14 +1,13 @@
 @use "../../styles/variables" as *;
+@use '../../styles/mixins' as *;
 
 .errorContainer {
     width: 100%;
     height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 12px;
     text-align: center;
+	@include flex-center;
+	@include flex-column;
 
     .errorIcon {
         width: 60px;
@@ -16,11 +15,9 @@
         background: $color-05;
         color: $color-accent;
         border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         font-size: 32px;
         font-weight: 600;
+		@include flex-center;
     }
 
     h3 {
@@ -40,7 +37,6 @@
 		border-radius: 50px;
         background: $color-01;
         color: $color-06;
-        font-weight: 600;
 
 		&:hover {
 			color: $color-02;

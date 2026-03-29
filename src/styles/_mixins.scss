@@ -9,3 +9,20 @@ $screen-xl: 1440px;
 @mixin md { @media (max-width: #{$screen-md}) { @content; } }
 @mixin lg { @media (max-width: #{$screen-lg}) { @content; } }
 @mixin xl { @media (max-width: #{$screen-xl}) { @content; } }
+
+@mixin flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin border-radius-8 {
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}

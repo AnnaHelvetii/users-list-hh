@@ -2,13 +2,11 @@
 @use "../../styles/mixins" as *;
 
 .overlay {
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	position: fixed;
 	inset: 0;
 	background: #16161624;
 	z-index: 999;
+	@include flex-center;
 }
 
 .modal {
