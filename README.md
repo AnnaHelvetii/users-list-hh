@@ -5,9 +5,8 @@ Tech stack:
 - React
 - TypeScript
 - Zustand
-- React Hook Form + Zod
-- tanstack query
+- React Hook Form + Zod validation
+- Tanstack Query
 - TypeScript
 - SCSS
-- TypeScript
 - React Router v7
